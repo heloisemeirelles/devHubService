@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Dev Hub Service</string>
+    <string name="noRegister"><u>Sign up here!</u></string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="enterWithGithubUsername">Github Username</string>
+    <string name="password">Password</string>
+    <string name="wrongUsername">Wrong Username!</string>
+    <string name="wrongPassword">Wrong Password!</string>
+    <string name="unregisteredUser">This user has not yet registered!</string>
+    <string name="createYourLogin">Create your login!\nMake sure your username in Dev Hub Service matches with your gitHub username!</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="create">Create</string>
+    <string name="forgotUsername">You forgot your username!</string>
+    <string name="forgotPassword">You forgot your password!</string>
+    <string name="forgotConfirmPassword">You forgot to confirm your password!</string>
+    <string name="passwordsDontMatch">Your passwords don\'t match!</string>
+    <string name="successMessage">You did it!\nClick on the sign in button to enter your new account</string>
+    <string name="privateRepo">Private:</string>
+    <string name="your_repos">Your repos</string>
+    <string name="repository">repository</string>
+    <string name="repositories">repositories</string>
+    <string name="home">home</string>
+    <string name="favorites">favorites</string>
+    <string name="search">search</string>
+    <string name="options">profile options</string>
+    <string name="logout">logout</string>
+    <string name="checkUsername">Check Username</string>
+    <string name="sorryUserNotFound">Sorry, but this user does not have a GitHub profile.\nPlease, sign up again, with the correct username! </string>
+    <string name="aboutYou">About you</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="wrongUsernameTyped">Something went wrong. Did you enter the right username?\nPlease, redo the sign up process!</string>
+    <string name="yourFavoriteRepositories">Your favorite repositories</string>
+    <string name="addList">Add a list</string>
+    <string name="listName">List Name</string>
+    <string name="listColor">List Color</string>
+    <string name="chooseAList">Choose a list</string>
+    <string name="done">Done!</string>
+    <string name="areYouSureToDelete">Are you sure you want to delete this list?</string>
+    <string name="areYouSureToDeleteUser">Are you sure you want to delete this user?</string>
+    <string name="yesIWantToDeleteThisList">Yes, I want to delete this list</string>
+    <string name="yesIWantToDeleteThisUser">Yes, I want to delete this user</string>
+    <string name="noItWasAMistake">No, it was a mistake</string>
+    <string name="yourLists">Your lists</string>
+    <string name="chooseYourList">Which list do you want to add this repo in?</string>
+    <string name="youDidNotCreateAList">You did not create a list yet.\nWould you like to try it out?</string>
+    <string name="createMyFirstList">Create my first list</string>
+    <string name="noThanks">No, thanks</string>
+    <string name="youHaveNoListCreatedSoFar">You have no list created so far.\nClick on the add button to create your first list!</string>
+    <string name="stay_connected">Stay connected</string>
+    <string name="noRepositoryInTheList">You do not have any repository added to this list. Click on the button bellow to be redirected to the Search Page and add your first repository!</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_favorite">Hello blank favorite</string>
+
+    <!-- Content Description -->
+    <string name="editButton">Edit List Button</string>
+
+
+</resources>
