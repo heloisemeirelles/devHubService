@@ -2,15 +2,14 @@ package android.devhubservice.ui.adapter
 
 import android.devhubservice.ui.dialog.favorite.RemoveListDialog
 import android.devhubservice.ui.fragment.FavoriteListDetailFragment
+import android.devhubservice.utils.ColorDataSource
 import android.devhubservice.viewModel.favorite.list.FavoriteListViewModel
 import android.raywenderlich.devhubservice.R
 import android.raywenderlich.devhubservice.databinding.ListItemBinding
 import android.service.models.FavoriteListsModel
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class FavoriteListAdapter(
@@ -32,7 +31,7 @@ class FavoriteListAdapter(
         val list = listData[position]
         with(holder) {
             with(list){
-                setTextColor(this.listColor, binding)
+                ColorDataSource(this.listColor, binding).setColor()
                 binding.tvListName.text = this.listName
                 binding.ibDeleteList.setOnClickListener {
                     RemoveListDialog((LayoutInflater.from(binding.root.context)), favoriteViewModel, FavoriteListsModel(this.login, this.listName, this.listColor)).showDialog()
@@ -47,42 +46,6 @@ class FavoriteListAdapter(
             }
         }
 
-    }
-
-    private fun setTextColor(listColor: String, binding: ListItemBinding) {
-        listColor.apply {
-            when(this){
-                "Orange" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.orange))
-                }
-                "Green" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.green))
-                }
-
-                "Grey" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.grey))
-                }
-
-                "Blue" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.blue))
-                }
-
-                "Black" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.black))
-                }
-
-                "Yellow" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.yellow))
-                }
-
-                "Purple" -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.purple_200))
-                }
-                else -> {
-                    binding.tvListName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.light_grey))
-                }
-            }
-        }
     }
 
     override fun getItemCount(): Int {

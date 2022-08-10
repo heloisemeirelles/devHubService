@@ -22,6 +22,7 @@ import android.devhubservice.ui.fragment.EmptyStateListFragment
 import android.devhubservice.viewModel.favorite.list.FavoriteListViewModel
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -43,6 +44,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var username: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(R.layout.activity_home)
         username = intent.getStringExtra("username")
         setDrawerLayout()
