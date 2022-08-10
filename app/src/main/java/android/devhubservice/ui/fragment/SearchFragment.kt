@@ -7,12 +7,15 @@ import android.devhubservice.viewModel.favorite.repo.FavoriteRepoViewModel
 import android.devhubservice.viewModel.user.SearchViewModel
 import android.os.Bundle
 import android.raywenderlich.devhubservice.databinding.SearchFragmentBinding
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class SearchFragment(val usernameFromDialog: String? = null) : Fragment() {
 
@@ -32,11 +35,17 @@ class SearchFragment(val usernameFromDialog: String? = null) : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        if(!usernameFromDialog.isNullOrBlank()) callAdapter(usernameFromDialog)
-        binding.btSearch.setOnClickListener { callAdapter(binding.etSearchUsername.text.toString()) }
+        if(!usernameFromDialog.isNullOrBlank()) performSearch(usernameFromDialog)
+        binding.etSearchUsername.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                performSearch(binding.etSearchUsername.text.toString())
+                return@OnEditorActionListener true
+            }
+            false
+        })
     }
 
-    private fun callAdapter(usernameFromDialog: String) {
+    private fun performSearch(usernameFromDialog: String) {
         viewModel.getUserByQuery(usernameFromDialog)
         viewModel.status.observe(viewLifecycleOwner) { status ->
             when (status) {
